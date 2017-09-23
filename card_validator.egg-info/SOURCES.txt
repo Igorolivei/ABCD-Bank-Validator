@@ -1,0 +1,7 @@
+README.md
+card_validator.egg-info/PKG-INFO
+card_validator.egg-info/SOURCES.txt
+card_validator.egg-info/dependency_links.txt
+card_validator.egg-info/entry_points.txt
+card_validator.egg-info/requires.txt
+card_validator.egg-info/top_level.txt
