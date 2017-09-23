@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block title %}Credit Card Validator{% endblock %}
+{% block content %}
+<h1 class="subtitle">💳 Credit Card Validator 💳</h1>
+<form id="validator" action="/validate/typed">
+    <label class="label" for="usuario">Type a quantity (1-100):</label><br>
+    <input id="cards-count" type="text" onkeypress="return showCardsText(event);" onchange="return checkCardsQuantity();" placeholder="Quantity of credit card numbers"/><br>
+    <textarea id="cards-list" name="cards-list" placeholder="Type your credit card numbers here (one per line)" disabled cols="50" onkeyup="return verifyLinesLimit();"></textarea><br>
+    <input type="submit" id="validate-typed" name="validate-typed" value="VALIDATE" disabled />
+</form>
+    <hr class="mini-divisor">
+    <p class="simple-text">OR</p>   
+    <hr class="mini-divisor">
+<form enctype="multipart/form-data" action="/validate/file">
+    <label class="label" for="cards-file">Upload a file (.txt):</label><br>
+    <input id="cards-file" name="cards-file" type="file" accept=".txt" onchange="changeFileUpload()" /><br><br>
+    <input type="submit" id="upload-file" name="upload-file" value="UPLOAD" disabled />
+</form>
+{% endblock %}
