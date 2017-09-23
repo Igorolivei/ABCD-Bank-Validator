@@ -8,10 +8,10 @@ class CreditCard:
 
     """Verifies if a given credit card number is valid or invalid"""
     def check_valid_card_number(self):
-        #Validate format, quantity of digits, start digit, and separators
+        #To validate format, quantity of digits, start digit, and separators
         pattern_format = (r'(([4,5,6]\d{3}[-]\d{4}[-]\d{4}[-]\d{4})|'
                           r'([4,5,6](\d{15})))$')
-        #Detects consecutive repeated digits, even that are separated by hyphen
+        #To detect consecutive repeated digits, even that are separated by hyphen
         pattern_repeated = (r'(((\d)\3{3,})|((\d)[-]\5{3,})|((\d)\7{1}[-]\7{2,})'
                             r'|((\d)\9{2}[-]\9{1,}))')
 
