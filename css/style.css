@@ -1,6 +1,6 @@
 
 /* CSS for textfields */
-.input-number
+#cardsCount
 {
     width : 30%;
     height: 10%;
@@ -15,31 +15,45 @@
 
 }
 
-.input-number:hover
+#cardsCount:hover
 {
     border: 1px solid #aaa;
     box-shadow: 1px 1px 5px #aac;
 }
 
-.input-card
+#cardsList
 {
-    width : 35%;
+    width : 40%;
     height: 10%;
     border-radius: 3px;
     border: 1px solid #CCC;
     font-size: 25px;
     font-family: Verdana;
     box-shadow: 1px 1px 5px #CCC;
-    display: block;
+    text-align: center;
+    display: none;
     margin: 0 auto;
 }
 
-.input-card:hover
+#cardsList:hover
 {
     border: 1px solid #aaa;
     box-shadow: 1px 1px 5px #aac;
 }
 
+.divisor {
+    width: 35%;
+    height: 10px;
+    border: 0;
+    box-shadow: 0 10px 10px -10px #8c8b8b inset;
+}
+
+.mini-divisor {
+    width: 8%;
+    height: 10px;
+    border: 0;
+    box-shadow: 0 10px 10px -10px #8c8b8b inset;
+}
 
 /* CSS for buttons */
 input[type='file']
@@ -104,7 +118,7 @@ label {
     font-style : normal;
     font-weight: normal;
     font-size  : 40px;
-    padding-top: 5%;
+    padding-top: 2%;
     text-align: center;
 }
 
