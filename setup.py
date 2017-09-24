@@ -3,6 +3,7 @@ from setuptools import setup
 requires = [
     'pyramid',
     'pyramid_jinja2',
+    'waitress'
 ]
 
 setup(name='card_validator',
