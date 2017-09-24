@@ -3,7 +3,7 @@ import uuid
 import shutil
 from collections import OrderedDict
 from pyramid.view import view_config
-import card_validator.abcdbank as bank
+import card_validator.models.abcdbank as bank
 
 """Common Views
 
@@ -18,7 +18,7 @@ class CommonViews:
     View to 404 page
     """
     @view_config(context='pyramid.httpexceptions.HTTPNotFound', 
-                 renderer='404.jinja2')
+                 renderer='templates/404.jinja2')
     def not_found(self):
         return {}
 
@@ -35,7 +35,7 @@ class CardValidatorViews:
     Return an empty dictionary because there's nothing to be filled
     in template
     """
-    @view_config(route_name='home', renderer='card_validator.jinja2')
+    @view_config(route_name='home', renderer='templates/card_validator.jinja2')
     def home(self):
         return {}
 
@@ -44,7 +44,7 @@ class CardValidatorViews:
     Verify and returns card numbers typed and if they're valid or not
     """
     @view_config(route_name='validator_typed', 
-                renderer='cards_validated.jinja2')
+                renderer='templates/cards_validated.jinja2')
     def cards_typed_validator(self):
         cards_validated = OrderedDict()
         message = ''
@@ -71,7 +71,7 @@ class CardValidatorViews:
     Verify and returns card numbers in a file and if they're valid or not
     """
     @view_config(route_name='validator_file', 
-                renderer='cards_validated.jinja2')
+                renderer='templates/cards_validated.jinja2')
     def cards_file_validator(self):
         cards_validated = OrderedDict()
         message = ''
