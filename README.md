@@ -53,3 +53,9 @@ $ ./run
 ```
 $ cd card_validator; ./terminal.py
 ```
+
+## Tests
+To run tests, execute: 
+```
+$VENV/bin/py.test card_validator/tests.py -q
+```
