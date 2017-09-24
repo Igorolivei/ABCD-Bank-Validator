@@ -148,15 +148,15 @@ ul {
 }
 
 li p {
-  text-decoration: none;
-  padding-top: 10px;
-  margin: auto;
-  color: #000;
-  transition: font-size 0.3s ease, background-color 0.3s ease;
-  width: 70%;
+    text-decoration: none;
+    padding-top: 10px;
+    margin: auto;
+    color: #000;
+    transition: font-size 0.3s ease, background-color 0.3s ease;
+    width: 70%;
 }
 
 li p:hover {
-  font-size: 30px;
-  background: #f6f6f6;
+    font-size: 30px;
+    background: #f6f6f6;
 }

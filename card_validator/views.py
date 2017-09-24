@@ -5,17 +5,30 @@ from collections import OrderedDict
 from pyramid.view import view_config
 import card_validator.abcdbank as bank
 
+"""Common Views
 
-class CardValidatorViews:
+Class containing common views 
+"""
+class CommonViews:
     def __init__(self, request):
         self.request = request
+
     """Return an empty dict
 
     View to 404 page
     """
-    @view_config(context='pyramid.httpexceptions.HTTPNotFound', renderer='404.jinja2')
+    @view_config(context='pyramid.httpexceptions.HTTPNotFound', 
+                 renderer='404.jinja2')
     def not_found(self):
         return {}
+
+"""Card Validator Views
+
+Class containing all the views related to credit card numbar validator
+"""
+class CardValidatorViews:
+    def __init__(self, request):
+        self.request = request
 
     """Return an empty dict
 

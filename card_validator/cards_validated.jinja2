@@ -3,7 +3,7 @@
 {% block content %}
 {% if cards_validated is defined and cards_validated is iterable %}
     <h2 class="subtitle">See your results below:</h2>
-	<ul>
+    <ul>
     {% for card_validated, result in cards_validated.items() %}
         <li><p class="simple-text">{# Uncomment if you want to print the card number {{card_validated}} - #}<span class="card-result">{{result}}</span></p></li>
     {% endfor %}

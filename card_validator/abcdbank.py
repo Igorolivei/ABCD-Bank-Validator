@@ -1,9 +1,9 @@
 # ABCD Bank module
-'''ABCD Bank module
+"""ABCD Bank module
 
 Used to implement CreditCard class
 Must be used to implement some other features (e.g.: client, accounts)
-'''
+"""
 import re
 
 class CreditCard:
@@ -16,8 +16,8 @@ class CreditCard:
     """
     def check_valid_number(self):
         #To validate format, quantity of digits, start digit, and separators
-        pattern_format = (r'(([4,5,6]\d{3}[-]\d{4}[-]\d{4}[-]\d{4})|'
-                          r'([4,5,6](\d{15})))$')
+        pattern_format = ('(([4,5,6]\d{3}[-]\d{4}[-]\d{4}[-]\d{4})|'
+                          '([4,5,6](\d{15})))$')
         #To detect consecutive repeated digits, even that are separated by hyphen
         pattern_repeated = (r'(((\d)\3{3,})|((\d)[-]\5{3,})|((\d)\7{1}[-]\7{2,})'
                             r'|((\d)\9{2}[-]\9{1,}))')
