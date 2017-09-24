@@ -6,7 +6,8 @@ width=device-width, height=device-height, target-densitydpi=device-dpi" />
 <head>
     {% block head %}
     {% endblock %}
-    <link rel="stylesheet" href="{{request.static_url('card_validator:static/style.css')}}">
+    <link rel="stylesheet" href="{{request.static_url('static/style.css')}}">
+    <!--<link rel="stylesheet" href="static/style.css'">-->
     <title>ABCD Bank - {% block title %}{% endblock %}</title>
 </head>
 <body>
