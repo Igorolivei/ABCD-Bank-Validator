@@ -1,5 +1,5 @@
 #!/usr/bin/python
-import abcdbank as bank
+import models.abcdbank as bank
 
 """Read N cards and return if they are valid or not
 """
