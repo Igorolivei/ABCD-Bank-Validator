@@ -1,2 +1,3 @@
 **/__pycache__
 card_validator.egg-info/
+*.pyc
