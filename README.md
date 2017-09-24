@@ -28,7 +28,7 @@ Installing and Running (on Linux)
 - Clone this repository: $ git clone https://github.com/Igorolivei/ABCD-Bank-Validator.git
 - Run setup.py: $ $VENV/bin/pip install -e .
 - Initialize PyContacts using development.ini:
--- In development: $ $VENV/bin/pserve development.ini --reload
--- In production: $ ./run
+:: In development: $ $VENV/bin/pserve development.ini --reload
+:: In production: $ ./run
 
 - If you want to execute on terminal: $ cd card_validator; ./terminal.py
