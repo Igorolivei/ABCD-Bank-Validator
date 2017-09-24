@@ -20,18 +20,25 @@ Installing and Running (on Linux)
 ---------------------------------
 
 - Set an environment variable:
-:: $ export VENV=~/my_path/env
+:: 
+    $ export VENV=~/my_path/env
 - Create a virtual environment:
-:: $ python3 -m venv $VENV
+:: 
+    $ python3 -m venv $VENV
 - Clone this repository:
-:: $ git clone https://github.com/Igorolivei/ABCD-Bank-Validator.git
+:: 
+    $ git clone https://github.com/Igorolivei/ABCD-Bank-Validator.git
 - Run setup.py:
-:: $ $VENV/bin/pip install -e .
+:: 
+    $ $VENV/bin/pip install -e .
 - Initialize PyContacts using development.ini:
 In development:
-:: $ $VENV/bin/pserve development.ini --reload
+:: 
+    $ $VENV/bin/pserve development.ini --reload
 In production:
-:: $ $VENV/bin/pserve production.ini --reload
+:: 
+    $ $VENV/bin/pserve production.ini --reload
 
 - If you want to execute on terminal:
-:: $ cd card_validator; ./app.py
+:: 
+    $ cd card_validator; ./app.py
