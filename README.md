@@ -1,5 +1,5 @@
 # ABCD Bank - Credit Card Validator
-==========
+
 ABCD Bank - Credit Card Validator is a little project made with Python, Pyramid web framework and Jinja2.
 Is used to validate if a credit card is a valid ABCD Bank's credit card or not.
 
