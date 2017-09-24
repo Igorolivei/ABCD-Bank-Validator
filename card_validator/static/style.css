@@ -1,7 +1,5 @@
-
-/* CSS for textfields */
-#cardsCount
-{
+/* CLASSES */
+.number-box {
     width : 30%;
     height: 10%;
     border-radius: 12px;
@@ -12,33 +10,26 @@
     box-shadow: 1px 1px 5px #CCC;
     display: block;
     margin: 0 auto;
-
 }
 
-#cardsCount:hover
-{
+.number-box:hover {
     border: 1px solid #aaa;
     box-shadow: 1px 1px 5px #aac;
 }
 
-#cardsList
-{
-    width : 40%;
-    height: 10%;
-    border-radius: 3px;
-    border: 1px solid #CCC;
-    font-size: 25px;
-    font-family: Verdana;
-    box-shadow: 1px 1px 5px #CCC;
+.not-found {
+    color: red !important;
+    display: block;
     text-align: center;
-    display: none;
-    margin: 0 auto;
+    font-weight: bold;
 }
 
-#cardsList:hover
-{
-    border: 1px solid #aaa;
-    box-shadow: 1px 1px 5px #aac;
+.card-invalid {
+    color: red !important;
+}
+
+.card-result {
+    font-weight: bold;
 }
 
 .divisor {
@@ -53,64 +44,6 @@
     height: 10px;
     border: 0;
     box-shadow: 0 10px 10px -10px #8c8b8b inset;
-}
-
-/* CSS for buttons */
-input[type='file']
-{
-    width : 20%;
-    height: 15%;
-    border: 2px solid white;
-    display: block;
-    margin: 0 auto;
-    background-color:#CCC;
-    font-size: 16px;
-    font-family: serif, Helvetica, Arial;
-    font-style: normal;
-    border-radius: 12px;
-
-    -webkit-transition: background-color 0.8s ease;
-}
-
-input[type='file']:hover
-{
-    width : 20%;
-    height: 15%;
-    border: 2px solid white;
-    background-color:#000000;
-    color:#fff;
-}
-
-input[type='submit'], input[type='button']
-{
-    border-radius: 8px;
-    width : 15%;
-    border: 2px solid white;
-    display: block;
-    margin: 0 auto;
-    background-color:#CCC;
-    font-size: 20px;
-    font-family: serif, Helvetica, Arial;
-    font-style: normal;
-    font-weight: bold;
-
-    -webkit-transition: background-color 0.8s ease;
-}
-
-input[type='submit']:hover, input[type='button']:hover
-{
-    border: 2px solid white;
-    background-color:#000000;
-    color:#fff;
-}
-
-label {
-    font-family: serif, Helvetica, Arial;
-    font-style : normal;
-    font-weight: bold;
-    font-size  : 18px;
-    display: block;
-    text-align: center;
 }
 
 .title {
@@ -137,28 +70,93 @@ label {
     text-align: center;
 }
 
-/* lists */
+/* ID's */
+#cards-list {
+    width : 40%;
+    height: 10%;
+    border-radius: 3px;
+    border: 1px solid #CCC;
+    font-size: 25px;
+    font-family: Verdana;
+    box-shadow: 1px 1px 5px #CCC;
+    text-align: center;
+    display: none;
+    margin: 0 auto;
+}
+
+#cards-list:hover {
+    border: 1px solid #aaa;
+    box-shadow: 1px 1px 5px #aac;
+}
+
+/* ELEMENTS */
+input[type='file'] {
+    width : 20%;
+    height: 15%;
+    border: 2px solid white;
+    display: block;
+    margin: 0 auto;
+    background-color:#CCC;
+    font-size: 16px;
+    font-family: serif, Helvetica, Arial;
+    font-style: normal;
+    border-radius: 12px;
+
+    -webkit-transition: background-color 0.8s ease;
+}
+
+input[type='file']:hover {
+    width : 20%;
+    height: 15%;
+    border: 2px solid white;
+    background-color:#000000;
+    color:#fff;
+}
+
+input[type='submit'], input[type='button'] {
+    border-radius: 8px;
+    width : 15%;
+    border: 2px solid white;
+    display: block;
+    margin: 0 auto;
+    background-color:#CCC;
+    font-size: 20px;
+    font-family: serif, Helvetica, Arial;
+    font-style: normal;
+    font-weight: bold;
+
+    -webkit-transition: background-color 0.8s ease;
+}
+
+input[type='submit']:hover, input[type='button']:hover {
+    border: 2px solid white;
+    background-color:#000000;
+    color:#fff;
+}
+
+label {
+    font-family: serif, Helvetica, Arial;
+    font-style : normal;
+    font-weight: bold;
+    font-size  : 18px;
+    display: block;
+    text-align: center;
+}
 
 ul {
     list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
 }
 
-li {
-    float: left;
+li p {
+  text-decoration: none;
+  padding-top: 10px;
+  margin: auto;
+  color: #000;
+  transition: font-size 0.3s ease, background-color 0.3s ease;
+  width: 70%;
 }
 
-li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-li a:hover {
-    background-color: #111;
+li p:hover {
+  font-size: 30px;
+  background: #f6f6f6;
 }

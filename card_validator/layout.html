@@ -5,10 +5,9 @@
 width=device-width, height=device-height, target-densitydpi=device-dpi" />
 <head>
     {% block head %}
-    {# url_for('static', filename='style.css') #}
-    <link rel="stylesheet" href="static/style.css">
-    <title>ABCD Bank - {% block title %}{% endblock %}</title>
     {% endblock %}
+    <link rel="stylesheet" href="{{request.static_url('card_validator:static/style.css')}}">
+    <title>ABCD Bank - {% block title %}{% endblock %}</title>
 </head>
 <body>
     <div id="header">
@@ -18,69 +17,5 @@ width=device-width, height=device-height, target-densitydpi=device-dpi" />
     <div>{% block content %}{% endblock %}</div>
 </body>
 </html>
-<script type="text/javascript">
-function showCardsText(e) {
-    if (e.keyCode == 13) {
-        checkCardsQuantity();
-    }
-}
-
-function checkCardsQuantity() {
-    var cardsCount = document.getElementById("cards-count").value;
-    var cardsList = document.getElementById("cards-list");
-    var btnValidateTyped = document.getElementById("validate-typed");
-
-    if (cardsCount == "") {
-        cardsList.style.display = 'none';
-        cardsList.disabled = true;
-        btnValidateTyped.disabled = true;
-    } else if (cardsCount < 1 || cardsCount > 100) {
-        alert("The quantity of credit cards numbers, must be between 1 and 100.");
-        return false;
-    } else {
-        cardsList.style.display = 'block';
-        cardsList.disabled = false;
-        cardsList.rows = cardsCount;
-        btnValidateTyped.disabled = false;
-    }
-}
-
-function changeFileUpload() {
-    var btnUpload = document.getElementById("upload-file");
-
-    if (document.getElementById("cards-file").value) {
-        btnUpload.disabled = false;
-        return false;
-    }
-    btnUpload.disabled = true;
-}
-
-function verifyLinesLimit() {
-    var limit = document.getElementById("cards-count").value;
-    var textarea = document.getElementById("cards-list");
-    var spaces = textarea.getAttribute("cols");
-    var lines = textarea.value.split("\n");
-    
-    for (var i = 0; i < lines.length; i++) 
-    {
-        if (lines[i].length <= spaces) continue;
-        var j = 0;
-        var space = spaces;
-         
-        while (j++ <= spaces) 
-        {
-           if (lines[i].charAt(j) === " ") space = j;  
-        }
-        lines[i + 1] = lines[i].substring(space + 1) + (lines[i + 1] || "");
-        lines[i] = lines[i].substring(0, space);
-    }
-    if(lines.length>limit)
-    {
-        textarea.style.color = 'red';
-        setTimeout(function(){
-            textarea.style.color = '';
-        },500);
-    }
-    textarea.value = lines.slice(0, limit).join("\n");
-}
-</script>
+{% block scripts %}
+{% endblock %}

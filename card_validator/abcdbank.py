@@ -1,7 +1,9 @@
 # ABCD Bank module
-"""ABCD Bank module
+'''ABCD Bank module
 
-"""
+Used to implement CreditCard class
+Must be used to implement some other features (e.g.: client, accounts)
+'''
 import re
 
 class CreditCard:

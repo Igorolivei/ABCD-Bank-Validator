@@ -1,13 +1,13 @@
 #!/usr/bin/python
-import abcdbank
+import card_validator.abcdbank as bank
 
 def read_cards_typed():
     n = input("Enter quantity of credit cards numbers that you will type:")
 
     for i in range(0, int(n)):
         card_number = input("Enter your credit card number: ")
-        card = abcdbank.CreditCard(card_number)
-        print card.check_valid_card_number()
+        card = bank.CreditCard(card_number)
+        print card.check_valid_number()
 
 def read_cards_file(path):
     cards_file = open(path, "r")
@@ -17,7 +17,7 @@ def read_cards_file(path):
     if 1 <= n <= 100 and n == cards_file_len-1:
         cards_file.seek(2)
         for line in cards_file:
-            card = abcdbank.CreditCard(line.strip())
+            card = bank.CreditCard(line.strip())
             print line.rstrip()+'-'+card.check_valid_number()
     cards_file.close()
 

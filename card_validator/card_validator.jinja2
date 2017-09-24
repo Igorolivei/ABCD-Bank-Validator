@@ -3,17 +3,104 @@
 {% block content %}
 <h1 class="subtitle">💳 Credit Card Validator 💳</h1>
 <form id="validator" action="/validate/typed">
-    <label class="label" for="usuario">Type a quantity (1-100):</label><br>
-    <input id="cards-count" type="text" onkeypress="return showCardsText(event);" onchange="return checkCardsQuantity();" placeholder="Quantity of credit card numbers"/><br>
-    <textarea id="cards-list" name="cards-list" placeholder="Type your credit card numbers here (one per line)" disabled cols="50" onkeyup="return verifyLinesLimit();"></textarea><br>
+    <label class="label" for="usuario">Type a quantity of card numbers (1-100) and press Enter:</label><br>
+    <input id="cards-count" name="cards-count" class="number-box" type="text" onkeypress="return showCardsText(event);" placeholder="Quantity of credit card numbers"/><br>
+    <textarea id="cards-list" name="cards-list" class="text-box" placeholder="Type your credit card numbers here (press Enter for each new card number, if more than one)" disabled cols="50" onkeyup="return verifyLinesLimit();"></textarea><br>
     <input type="submit" id="validate-typed" name="validate-typed" value="VALIDATE" disabled />
 </form>
     <hr class="mini-divisor">
     <p class="simple-text">OR</p>   
     <hr class="mini-divisor">
-<form enctype="multipart/form-data" action="/validate/file">
+<form enctype="multipart/form-data" method="POST" accept-charset="utf-8" action="/validate/file">
     <label class="label" for="cards-file">Upload a file (.txt):</label><br>
     <input id="cards-file" name="cards-file" type="file" accept=".txt" onchange="changeFileUpload()" /><br><br>
     <input type="submit" id="upload-file" name="upload-file" value="UPLOAD" disabled />
 </form>
+{% endblock %}
+{% block scripts %}
+<script type="text/javascript">
+function showCardsText(e) {
+    if (e.keyCode == 13) {
+        //checkCardsQuantity();
+        var cardsCount = document.getElementById("cards-count").value;
+
+        if (cardsCount == "") {
+            disableCardsList();
+            return false;   
+        } else if (cardsCount < 1 || cardsCount > 100) {
+            disableCardsList();
+            alert("The quantity of credit card's numbers, must be between 1 and 100.");
+            return false;
+        } else {
+            enableCardsList();
+            return false;
+        }
+    }
+}
+
+function disableCardsList() {
+    var cardsCount = document.getElementById("cards-count").value;
+    var cardsList = document.getElementById("cards-list");
+    var btnValidateTyped = document.getElementById("validate-typed");
+
+    cardsList.style.display = 'none';
+    cardsList.disabled = true;
+    btnValidateTyped.disabled = true;
+}
+
+function enableCardsList() {
+    var cardsCount = document.getElementById("cards-count").value;
+    var cardsList = document.getElementById("cards-list");
+    var btnValidateTyped = document.getElementById("validate-typed");
+
+    btnValidateTyped.disabled = false;
+    cardsList.style.display = 'block';
+    cardsList.disabled = false;
+    cardsList.rows = cardsCount > 1 ? cardsCount : 2;
+    cardsList.focus();
+}
+
+function checkCardsQuantity() {
+
+}
+
+function changeFileUpload() {
+    var btnUpload = document.getElementById("upload-file");
+
+    if (document.getElementById("cards-file").value) {
+        btnUpload.disabled = false;
+        return false;
+    }
+    btnUpload.disabled = true;
+}
+
+function verifyLinesLimit() {
+    var limit = document.getElementById("cards-count").value;
+    var textarea = document.getElementById("cards-list");
+    var spaces = textarea.getAttribute("cols");
+    var lines = textarea.value.split("\n");
+    
+    for (var i = 0; i < lines.length; i++) 
+    {
+        if (lines[i].length <= spaces) continue;
+        var j = 0;
+        var space = spaces;
+         
+        while (j++ <= spaces) 
+        {
+           if (lines[i].charAt(j) === " ") space = j;  
+        }
+        lines[i + 1] = lines[i].substring(space + 1) + (lines[i + 1] || "");
+        lines[i] = lines[i].substring(0, space);
+    }
+    if(lines.length>limit)
+    {
+        textarea.style.color = 'red';
+        setTimeout(function(){
+            textarea.style.color = '';
+        },500);
+    }
+    textarea.value = lines.slice(0, limit).join("\n");
+}
+</script>
 {% endblock %}
