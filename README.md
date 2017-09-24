@@ -11,6 +11,10 @@ A valid ABCD Bank's credit card has the following characteristics:
 * It must NOT use any other separator like ' ' , '_', etc. 
 * It must NOT have 4 or more consecutive repeated digits.
 
+Demo
+----
+You can see a demo at: http://abcdcardvalidator.herokuapp.com
+
 Dependencies
 ------------
 - Python 3
@@ -19,26 +23,12 @@ Dependencies
 Installing and Running (on Linux)
 ---------------------------------
 
-- Set an environment variable:
-:: 
-    $ export VENV=~/my_path/env
-- Create a virtual environment:
-:: 
-    $ python3 -m venv $VENV
-- Clone this repository:
-:: 
-    $ git clone https://github.com/Igorolivei/ABCD-Bank-Validator.git
-- Run setup.py:
-:: 
-    $ $VENV/bin/pip install -e .
+- Set an environment variable: $ export VENV=~/my_path/env
+- Create a virtual environment: $ python3 -m venv $VENV
+- Clone this repository: $ git clone https://github.com/Igorolivei/ABCD-Bank-Validator.git
+- Run setup.py: $ $VENV/bin/pip install -e .
 - Initialize PyContacts using development.ini:
-In development:
-:: 
-    $ $VENV/bin/pserve development.ini --reload
-In production:
-:: 
-    $ $VENV/bin/pserve production.ini --reload
+In development: $ $VENV/bin/pserve development.ini --reload
+In production: $ ./run
 
-- If you want to execute on terminal:
-:: 
-    $ cd card_validator; ./app.py
+- If you want to execute on terminal: $ cd card_validator; ./terminal.py
