@@ -1,4 +1,4 @@
-ABCD Bank - Credit Card Validator
+# ABCD Bank - Credit Card Validator
 ==========
 ABCD Bank - Credit Card Validator is a little project made with Python, Pyramid web framework and Jinja2.
 Is used to validate if a credit card is a valid ABCD Bank's credit card or not.
@@ -11,24 +11,45 @@ A valid ABCD Bank's credit card has the following characteristics:
 * It must NOT use any other separator like ' ' , '_', etc. 
 * It must NOT have 4 or more consecutive repeated digits.
 
-Demo
-----
+## Demo
+
 You can see a demo at: http://abcdcardvalidator.herokuapp.com
 
-Dependencies
-------------
+## Dependencies
+
 - Python 3
 - Pyramid 1.9.1
 
-Installing and Running (on Linux)
----------------------------------
+## Installing and Running (on Linux)
 
-- Set an environment variable: $ export VENV=~/my_path/env
-- Create a virtual environment: $ python3 -m venv $VENV
-- Clone this repository: $ git clone https://github.com/Igorolivei/ABCD-Bank-Validator.git
-- Run setup.py: $ $VENV/bin/pip install -e .
+- Set an environment variable: 
+```
+$ export VENV=~/my_path/env
+```
+- Create a virtual environment: 
+```
+$ python3 -m venv $VENV
+```
+- Clone this repository: 
+```
+$ git clone https://github.com/Igorolivei/ABCD-Bank-Validator.git
+```
+- Run setup.py: 
+```
+$ $VENV/bin/pip install -e .
+```
 - Initialize PyContacts using development.ini:
-:: In development: $ $VENV/bin/pserve development.ini --reload
-:: In production: $ ./run
 
-- If you want to execute on terminal: $ cd card_validator; ./terminal.py
+In development: 
+```
+$ $VENV/bin/pserve development.ini --reload
+```
+In production: 
+```
+$ ./run
+```
+
+- If you want to execute on terminal: 
+```
+$ cd card_validator; ./terminal.py
+```
