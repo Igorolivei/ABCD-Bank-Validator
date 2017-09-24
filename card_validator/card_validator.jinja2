@@ -19,9 +19,9 @@
 {% endblock %}
 {% block scripts %}
 <script type="text/javascript">
+//Verify if the textarea to type the card numbers must be shown or not
 function showCardsText(e) {
     if (e.keyCode == 13) {
-        //checkCardsQuantity();
         var cardsCount = document.getElementById("cards-count").value;
 
         if (cardsCount == "") {
@@ -38,6 +38,7 @@ function showCardsText(e) {
     }
 }
 
+//Hide and disable the textarea for card numbers and disable the button to validate
 function disableCardsList() {
     var cardsCount = document.getElementById("cards-count").value;
     var cardsList = document.getElementById("cards-list");
@@ -48,6 +49,7 @@ function disableCardsList() {
     btnValidateTyped.disabled = true;
 }
 
+//Show and enable the textarea for card numbers and enable the button to validate
 function enableCardsList() {
     var cardsCount = document.getElementById("cards-count").value;
     var cardsList = document.getElementById("cards-list");
@@ -60,10 +62,7 @@ function enableCardsList() {
     cardsList.focus();
 }
 
-function checkCardsQuantity() {
-
-}
-
+//Verify if the button to upload must be enabled or not
 function changeFileUpload() {
     var btnUpload = document.getElementById("upload-file");
 
@@ -74,6 +73,7 @@ function changeFileUpload() {
     btnUpload.disabled = true;
 }
 
+//Verify if the user is trying to type more than N cards 
 function verifyLinesLimit() {
     var limit = document.getElementById("cards-count").value;
     var textarea = document.getElementById("cards-list");
